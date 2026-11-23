@@ -2,22 +2,25 @@
 version: "v0.4"
 
 project:
-  name: "Carmichael's Totient Conjecture: Kernel-Verified 10^10,117 Lower Bound, Structural Theory, and Ford's k = 10 Descent"
+  name: "Carmichael's Totient Conjecture: Kernel-Verified 10^10,117 Lower Bound, 10^-5,057 Density Bound, Structural Theory, and Ford's k = 10 Descent"
   description: >-
     Unconditional Lean 4 + Mathlib formalization of Carmichael's totient
-    conjecture lower-bound theory (zero sorry, zero native_decide, standard
-    axioms only): proves 10^10,117 < x unconditionally for every Carmichael
-    counterexample x (10^10,240 < x in Case I and 10^10,117 < x in Case II via
-    161 kernel-checked Lucas primality ladders, surpassing Masai and Valette's
-    1982 bound of 10^10,000), Ford's (1998) Lemma 7.2 prime-square forcing rule,
+    conjecture lower-bound and density-transfer theory (zero sorry, zero
+    native_decide, standard axioms only): proves 10^10,117 < x unconditionally
+    for every Carmichael counterexample x (10^10,240 < x in Case I and
+    10^10,117 < x in Case II via 161 kernel-checked Lucas primality ladders,
+    surpassing Masai and Valette's 1982 bound of 10^10,000), the unconditional
+    pure-kernel limiting singleton density bound liminf V1(X)/V(X) < 10^-5,057,
+    totient-value and density transfer via Ford's (1998) Lemmas 7.4-7.5 and
+    Chebyshev's prime lower bound, Ford's Lemma 7.2 prime-square forcing rule,
     Klee's (1947) minimal-counterexample structure, Pomerance's (1974)
     sufficient condition, Ford's reduction to k = 6, and the unconditional bound
     m >= 32,000 for Ford's k = 10 divisible-preimage problem, plus non-vacuity
-    witnesses. Scope note: the larger 10^100,000,160,994 Carmichael bound and
-    m >= 10^60 k = 10 bound in the companion manuscript
-    (https://mathdiscoveries.org/results/carmichael-totient) rely on external
-    exact-integer certificates whose soundness bridges are proved in this
-    library.
+    witnesses. Scope note: the larger 10^100,000,160,994 Carmichael bound,
+    10^-50,000,080,497 density bound, and m >= 10^60 k = 10 bound in the
+    companion manuscript (https://mathdiscoveries.org/results/carmichael-totient)
+    rely on external exact-integer certificates whose soundness and transfer
+    theorems are proved in this library.
   authors:
     - "Tyler B. Hughes"
   license: "Apache-2.0"
@@ -74,15 +77,18 @@ sources:
 status:
   scope: >-
     Unconditionally proved inside Lean 4 + Mathlib with standard axioms only
-    (zero sorry, zero native_decide): 10^10,240 < x in Case I, 10^10,117 < x in
-    Case II, 10^10,117 < x unconditionally for every Carmichael counterexample,
-    Ford's Lemma 7.2, Klee's minimal-counterexample structure, Pomerance's
-    sufficient condition, Ford's k = 6 reduction, m >= 32,000 for every k = 10
-    divisible-preimage witness, and concrete grounding witnesses. The library
-    also proves the soundness bridges CarmichaelBoundCertificate and
-    K10RungCertificate; the larger 10^100,000,160,994 and 10^60 instances are
-    verified externally in exact integer arithmetic and are not proved inside
-    Lean.
+    (176 verified declarations, zero sorry, zero native_decide): 10^10,240 < x
+    in Case I, 10^10,117 < x in Case II, 10^10,117 < x unconditionally for every
+    Carmichael counterexample, the unconditional limiting singleton density
+    bound liminf V1(X)/V(X) < 10^-5,057, reciprocal-sum totient-value transfer,
+    Ford's Lemmas 7.4-7.5 and limiting density transfer, Ford's Lemma 7.2,
+    Klee's minimal-counterexample structure, Pomerance's sufficient condition,
+    Ford's k = 6 reduction, m >= 32,000 for every k = 10 divisible-preimage
+    witness, and concrete grounding witnesses. The library also proves the
+    soundness and transfer bridges CarmichaelBoundCertificate,
+    corollary_value_and_density_transfer, and K10RungCertificate; the larger
+    10^100,000,160,994, 10^-50,000,080,497, and 10^60 instances are verified
+    externally in exact integer arithmetic and are not proved inside Lean.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Quot.sound", "Classical.choice"]
@@ -108,12 +114,14 @@ automation:
 fidelity:
   divergences: >-
     The full manuscript also reports larger external exact-integer certificate
-    bounds (x > 10^100,000,160,994 for Carmichael's conjecture and m >= 10^60
-    for Ford's k = 10 divisible-preimage question). Challenge.lean states only
-    the 100% unconditional Lean-proved bounds (x > 10^10,117 and m >= 32,000)
-    and structural theorems; the soundness bridges for larger certificates are
-    formalized inside CarmichaelTotient/CaseRules.lean and
-    CarmichaelTotient/ValuationTree.lean.
+    bounds (x, phi(x) > 10^100,000,160,994 and liminf V1(X)/V(X) <
+    10^-50,000,080,497 for Carmichael's conjecture, and m >= 10^60 for Ford's
+    k = 10 divisible-preimage question). Challenge.lean states only the 100%
+    unconditional Lean-proved bounds (x > 10^10,117, liminf V1(X)/V(X) <
+    10^-5,057, and m >= 32,000) and structural/transfer theorems; the soundness
+    and transfer bridges for larger certificates are formalized inside
+    CarmichaelTotient/CaseRules.lean, CarmichaelTotient/ValuationTree.lean, and
+    CarmichaelTotient/ValueAndDensityTransfer.lean.
 
 review:
   status: agent-reviewed
