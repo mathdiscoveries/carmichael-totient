@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CarmichaelChallenge.carmichael_case1_gt_10_pow_10240",
+    "CarmichaelChallenge.carmichael_case2_gt_10_pow_10117",
+    "CarmichaelChallenge.carmichael_counterexample_gt_10_pow_10117",
+    "CarmichaelChallenge.ford_lemma_7_2",
+    "CarmichaelChallenge.minimal_counterexample_structure",
+    "CarmichaelChallenge.pomerance_sufficient_condition",
+    "CarmichaelChallenge.no_k6_witness_implies_carmichael",
+    "CarmichaelChallenge.k10_witness_ge_32000",
+    "CarmichaelChallenge.totient_eq_ten_iff",
+    "CarmichaelChallenge.k11_witness_110"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

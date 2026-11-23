@@ -1,0 +1,181 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Carmichael's Totient Conjecture: Kernel-Verified 10^10,117 Lower Bound, Structural Theory, and Ford's k = 10 Descent"
+  description: >-
+    Unconditional Lean 4 + Mathlib formalization of Carmichael's totient
+    conjecture lower-bound theory (zero sorry, zero native_decide, standard
+    axioms only): proves 10^10,117 < x unconditionally for every Carmichael
+    counterexample x (10^10,240 < x in Case I and 10^10,117 < x in Case II via
+    161 kernel-checked Lucas primality ladders, surpassing Masai and Valette's
+    1982 bound of 10^10,000), Ford's (1998) Lemma 7.2 prime-square forcing rule,
+    Klee's (1947) minimal-counterexample structure, Pomerance's (1974)
+    sufficient condition, Ford's reduction to k = 6, and the unconditional bound
+    m >= 32,000 for Ford's k = 10 divisible-preimage problem, plus non-vacuity
+    witnesses. Scope note: the larger 10^100,000,160,994 Carmichael bound and
+    m >= 10^60 k = 10 bound in the companion manuscript
+    (https://mathdiscoveries.org/results/carmichael-totient) rely on external
+    exact-integer certificates whose soundness bridges are proved in this
+    library.
+  authors:
+    - "Tyler B. Hughes"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Tyler B. Hughes"
+
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11A25", "11N64", "11Y11"]
+
+sources:
+  - title: "Note on Euler's phi-function"
+    authors:
+      - "Robert D. Carmichael"
+    id: "https://doi.org/10.1090/S0002-9904-1922-03504-5"
+    type: paper
+    location: "Bull. Amer. Math. Soc. 28 (1922), 109-110"
+    relationship: background
+    note: "Poses Carmichael's totient conjecture and proves x > 10^37."
+  - title: "On a conjecture of Carmichael"
+    authors:
+      - "Victor L. Klee Jr."
+    id: "https://doi.org/10.1090/S0002-9904-1947-08940-0"
+    type: paper
+    location: "Bull. Amer. Math. Soc. 53 (1947), 1183-1186"
+    relationship: formalizes
+    note: "Proves minimal counterexample structure (4 || x and Fermat prime exclusions) and x > 10^400."
+  - title: "On Carmichael's conjecture"
+    authors:
+      - "Carl Pomerance"
+    id: "https://doi.org/10.1090/S0002-9939-1974-0347717-1"
+    type: paper
+    location: "Proc. Amer. Math. Soc. 43 (1974), 297-298"
+    relationship: formalizes
+    note: "Establishes Pomerance's sufficient condition for a Carmichael counterexample."
+  - title: "A lower bound for a counterexample to Carmichael's conjecture"
+    authors:
+      - "Pierre Masai"
+      - "Alain Valette"
+    id: "https://doi.org/10.1016/0022-314X(82)90018-6"
+    type: paper
+    location: "J. Number Theory 15 (1982), 344-347"
+    relationship: formalizes
+    note: "Establishes x > 10^10,000; this formalization proves x > 10^10,117 purely inside the Lean 4 kernel."
+  - title: "The distribution of totients"
+    authors:
+      - "Kevin Ford"
+    id: "https://doi.org/10.1023/A:1009761909132"
+    type: paper
+    location: "Ramanujan J. 2 (1998), 67-151"
+    relationship: formalizes
+    note: "Formulates Lemma 7.2, the k = 6 reduction, and the divisible-preimage problem in Section 7.3."
+
+status:
+  scope: >-
+    Unconditionally proved inside Lean 4 + Mathlib with standard axioms only
+    (zero sorry, zero native_decide): 10^10,240 < x in Case I, 10^10,117 < x in
+    Case II, 10^10,117 < x unconditionally for every Carmichael counterexample,
+    Ford's Lemma 7.2, Klee's minimal-counterexample structure, Pomerance's
+    sufficient condition, Ford's k = 6 reduction, m >= 32,000 for every k = 10
+    divisible-preimage witness, and concrete grounding witnesses. The library
+    also proves the soundness bridges CarmichaelBoundCertificate and
+    K10RungCertificate; the larger 10^100,000,160,994 and 10^60 instances are
+    verified externally in exact integer arithmetic and are not proved inside
+    Lean.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+
+automation:
+  methods:
+    - method: agent
+      models: []
+      framework: "AI research agents built and directed by Tyler B. Hughes"
+      tool_setup: >-
+        AI research agents built and directed by Tyler B. Hughes developed and
+        checked the Lean 4 formalization and Lucas primality ladders.
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "Goal-directed mathematical discovery and Lean 4 formalization."
+  spend_usd: "not tracked"
+  notes: >-
+    Generated and checked by AI research agents built and directed by Tyler B.
+    Hughes. No human mathematician has yet refereed the proof.
+
+fidelity:
+  divergences: >-
+    The full manuscript also reports larger external exact-integer certificate
+    bounds (x > 10^100,000,160,994 for Carmichael's conjecture and m >= 10^60
+    for Ford's k = 10 divisible-preimage question). Challenge.lean states only
+    the 100% unconditional Lean-proved bounds (x > 10^10,117 and m >= 32,000)
+    and structural theorems; the soundness bridges for larger certificates are
+    formalized inside CarmichaelTotient/CaseRules.lean and
+    CarmichaelTotient/ValuationTree.lean.
+
+review:
+  status: agent-reviewed
+  reviewers:
+    - "AI review agents directed by Tyler B. Hughes"
+  notes: >-
+    Audited by AI review agents and verified for standard axioms only via
+    CarmichaelTotient/Verify.lean and 6-kernel comparator replay. No human
+    mathematician has yet refereed the proof.
+
+alignment:
+  namespace: "CarmichaelChallenge"
+  statements:
+    - source: "Unconditional Case I bound (10^10,240 < x)"
+      lean: "CarmichaelChallenge.carmichael_case1_gt_10_pow_10240"
+      module: "Challenge"
+      status: proved
+      note: "Unconditional over N when not (27 | x), via 81 kernel-checked Lucas ladders."
+    - source: "Unconditional Case II bound (10^10,117 < x)"
+      lean: "CarmichaelChallenge.carmichael_case2_gt_10_pow_10117"
+      module: "Challenge"
+      status: proved
+      note: "Unconditional over N when 27 | x, via 80 kernel-checked Lucas ladders."
+    - source: "Unconditional Carmichael counterexample bound (10^10,117 < x)"
+      lean: "CarmichaelChallenge.carmichael_counterexample_gt_10_pow_10117"
+      module: "Challenge"
+      status: proved
+      note: "Combines Case I and Case II unconditionally; surpasses Masai-Valette (1982)."
+    - source: "Ford's Lemma 7.2 prime-square forcing rule"
+      lean: "CarmichaelChallenge.ford_lemma_7_2"
+      module: "Challenge"
+      status: proved
+      note: "Every prime P = 1 + e*phi(d) under unitary divisor conditions satisfies P^2 | x."
+    - source: "Klee's (1947) minimal counterexample structure"
+      lean: "CarmichaelChallenge.minimal_counterexample_structure"
+      module: "Challenge"
+      status: proved
+      note: "Proves 4 | x0, not 8 | x0, and none of 5, 17, 257, 65537 divides x0."
+    - source: "Pomerance's (1974) sufficient condition"
+      lean: "CarmichaelChallenge.pomerance_sufficient_condition"
+      module: "Challenge"
+      status: proved
+      note: "If p^2 | x for every prime p with (p - 1) | phi(x), then x is a counterexample."
+    - source: "Ford's (1998, Section 7.3) reduction to k = 6"
+      lean: "CarmichaelChallenge.no_k6_witness_implies_carmichael"
+      module: "Challenge"
+      status: proved
+      note: "Non-existence of a 6-divisible totient witness implies Carmichael's conjecture."
+    - source: "Unconditional k = 10 divisible-preimage bound (32,000 <= m)"
+      lean: "CarmichaelChallenge.k10_witness_ge_32000"
+      module: "Challenge"
+      status: proved
+      note: "Any totient m whose positive preimages are all divisible by 10 satisfies m >= 32,000."
+    - source: "Grounding witness for Euler's totient (phi(y) = 10)"
+      lean: "CarmichaelChallenge.totient_eq_ten_iff"
+      module: "Challenge"
+      status: proved
+      note: "Verifies Nat.totient y = 10 <-> y = 11 or y = 22."
+    - source: "Grounding witness for divisible-preimage predicate (k = 11, m = 110)"
+      lean: "CarmichaelChallenge.k11_witness_110"
+      module: "Challenge"
+      status: proved
+      note: "Verifies IsDivisibleTotientWitness 11 110 (non-vacuity check)."
+
+acknowledgements: "Built on Lean 4 and Mathlib."
