@@ -11,7 +11,11 @@
     "CarmichaelChallenge.no_k6_witness_implies_carmichael",
     "CarmichaelChallenge.k10_witness_ge_32000",
     "CarmichaelChallenge.totient_eq_ten_iff",
-    "CarmichaelChallenge.k11_witness_110"
+    "CarmichaelChallenge.k11_witness_110",
+    "CarmichaelChallenge.totient_value_gt_of_forced_primes",
+    "CarmichaelChallenge.ford_lemma_7_4_7_5",
+    "CarmichaelChallenge.liminf_V1_div_V_le_two_div_min",
+    "CarmichaelChallenge.carmichael_liminf_density_lt_10_pow_neg_5057"
   ],
   "definition_names": [],
   "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]

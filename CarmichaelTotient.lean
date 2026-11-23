@@ -6,3 +6,4 @@ public import CarmichaelTotient.Carmichael1922
 public import CarmichaelTotient.StructuralAndPomerance
 public import CarmichaelTotient.ValuationTree
 public import CarmichaelTotient.TreeAndKleeBounds
+public import CarmichaelTotient.ValueAndDensityTransfer

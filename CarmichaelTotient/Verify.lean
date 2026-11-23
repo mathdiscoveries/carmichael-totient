@@ -181,3 +181,22 @@ Lean's standard axioms (`propext`, `Classical.choice`, `Quot.sound`) — NEVER
 #print axioms CarmichaelTotient.carmichael_counterexample_gt_10_pow_10000
 #print axioms CarmichaelTotient.carmichael_counterexample_gt_10_pow_1000
 #print axioms CarmichaelTotient.carmichael_counterexample_gt_10_pow_400
+
+-- Totient value transfer, Ford's Lemmas 7.4-7.5, and singleton density bound (ValueAndDensityTransfer.lean)
+#print axioms CarmichaelTotient.one_sub_sum_le_prod_one_sub
+#print axioms CarmichaelTotient.totient_forcedDivisor_eq_real
+#print axioms CarmichaelTotient.totient_value_gt_of_forced_primes
+#print axioms CarmichaelTotient.totient_mul_of_prime_dvd
+#print axioms CarmichaelTotient.totient_pow_mul_eq
+#print axioms CarmichaelTotient.exists_max_pow_dvd
+#print axioms CarmichaelTotient.ford_lemma_7_4_7_5
+#print axioms CarmichaelTotient.V_mono
+#print axioms CarmichaelTotient.primeCounting_le_V
+#print axioms CarmichaelTotient.V_pos
+#print axioms CarmichaelTotient.V1_le_two_mul_V_div
+#print axioms CarmichaelTotient.frequently_V1_div_V_lt
+#print axioms CarmichaelTotient.liminf_V1_div_V_le_two_div_min
+#print axioms CarmichaelTotient.forcedCase1_prime_ge_five
+#print axioms CarmichaelTotient.forcedCase2_prime_ge_five
+#print axioms CarmichaelTotient.corollary_value_and_density_transfer
+#print axioms CarmichaelTotient.carmichael_liminf_density_lt_10_pow_neg_5057

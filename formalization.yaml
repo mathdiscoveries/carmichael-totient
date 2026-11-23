@@ -177,5 +177,25 @@ alignment:
       module: "Challenge"
       status: proved
       note: "Verifies IsDivisibleTotientWitness 11 110 (non-vacuity check)."
+    - source: "Reciprocal-sum totient-value transfer (d >= 6 * 10^D and sum 1/p < 1/2 => 10^D < phi(x))"
+      lean: "CarmichaelChallenge.totient_value_gt_of_forced_primes"
+      module: "Challenge"
+      status: proved
+      note: "Transfers forced prime-square divisor bounds to the totient value m = phi(x)."
+    - source: "Ford's (1998) Lemmas 7.4-7.5 square-divisor totient injection"
+      lean: "CarmichaelChallenge.ford_lemma_7_4_7_5"
+      module: "Challenge"
+      status: proved
+      note: "Proves VDiv X a <= V (X / a) for all a >= 2 via integer-quotient injection."
+    - source: "Limiting singleton density bound (liminf V1(X)/V(X) <= 2 / min a1 a2)"
+      lean: "CarmichaelChallenge.liminf_V1_div_V_le_two_div_min"
+      module: "Challenge"
+      status: proved
+      note: "Proves liminf V1(X)/V(X) <= 2 / min a1 a2 via Ford Lemmas 7.4-7.5 and Chebyshev's lower bound."
+    - source: "Unconditional pure-kernel limiting singleton density bound (< 10^-5057)"
+      lean: "CarmichaelChallenge.carmichael_liminf_density_lt_10_pow_neg_5057"
+      module: "Challenge"
+      status: proved
+      note: "Unconditionally proves liminf V1(X)/V(X) < 1 / 10^5057 inside Lean 4."
 
 acknowledgements: "Built on Lean 4 and Mathlib."

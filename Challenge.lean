@@ -2,6 +2,8 @@ module
 
 public import Mathlib.Data.Nat.Totient
 public import Mathlib.Data.Nat.Factorization.Basic
+public import Mathlib.Analysis.SpecialFunctions.Log.Basic
+public import Mathlib.Order.LiminfLimsup
 
 /-!
 # Palomar Challenge: Carmichael's Totient Conjecture (`10^10,117 < x`), Structural Theory, and Ford's `k = 10` Lower Bound
@@ -103,6 +105,60 @@ theorem totient_eq_ten_iff (y : ℕ) : Nat.totient y = 10 ↔ y = 11 ∨ y = 22 
 
 /-- Grounding witness: every positive preimage of `110` is divisible by `11`. -/
 theorem k11_witness_110 : IsDivisibleTotientWitness 11 110 := by
+  sorry
+
+/-- `n` lies in the image of Euler's totient on positive integers. -/
+def IsTotientValue (n : ℕ) : Prop :=
+  ∃ y : ℕ, 0 < y ∧ Nat.totient y = n
+
+/-- Count of distinct totient values `1 ≤ n ≤ X`. -/
+noncomputable def V (X : ℕ) : ℕ := by
+  classical
+  exact ((Finset.Icc 1 X).filter (fun n => IsTotientValue n)).card
+
+/-- Count of singleton totient values `1 ≤ n ≤ X` (`A(n) = 1`). -/
+noncomputable def V1 (X : ℕ) : ℕ := by
+  classical
+  exact ((Finset.Icc 1 X).filter
+    (fun n => ∃ x : ℕ, IsCarmichaelCounterexample x ∧ Nat.totient x = n)).card
+
+/-- Count of totient values `1 ≤ n ≤ X` whose every positive preimage is divisible by `a ^ 2`. -/
+noncomputable def VDiv (X a : ℕ) : ℕ := by
+  classical
+  exact ((Finset.Icc 1 X).filter
+    (fun n => IsTotientValue n ∧ ∀ y : ℕ, 0 < y → Nat.totient y = n → a ^ 2 ∣ y)).card
+
+/-- Reciprocal-sum totient-value transfer: forced prime-square divisor `d ≥ 6 * 10^D` with
+`∑_{p ∈ S} 1/p < 1/2` forces `10^D < φ(x)`. -/
+theorem totient_value_gt_of_forced_primes
+    {D b x : ℕ} {S : Finset ℕ}
+    (hx : 0 < x)
+    (hb : b = 36 ∨ b = 108)
+    (hS : ∀ p ∈ S, Nat.Prime p ∧ 5 ≤ p)
+    (hdvd : b * ∏ p ∈ S, p ^ 2 ∣ x)
+    (hbig : 6 * 10 ^ D ≤ b * ∏ p ∈ S, p ^ 2)
+    (hrec : ∑ p ∈ S, (1 : ℝ) / (p : ℝ) < 1 / 2) :
+    10 ^ D < Nat.totient x := by
+  sorry
+
+/-- Ford's (1998) Lemmas 7.4–7.5: for every `a ≥ 2`, `VDiv X a ≤ V (X / a)`. -/
+theorem ford_lemma_7_4_7_5 {X a : ℕ} (ha : 2 ≤ a) :
+    VDiv X a ≤ V (X / a) := by
+  sorry
+
+/-- General limiting singleton density bound: if every counterexample is divisible by
+`a₁ ^ 2` or `a₂ ^ 2`, then `liminf V₁(X) / V(X) ≤ 2 / min a₁ a₂`. -/
+theorem liminf_V1_div_V_le_two_div_min {a₁ a₂ : ℕ} (ha₁ : 2 ≤ a₁) (ha₂ : 2 ≤ a₂)
+    (hcov : ∀ x : ℕ, IsCarmichaelCounterexample x → a₁ ^ 2 ∣ x ∨ a₂ ^ 2 ∣ x) :
+    Filter.liminf (fun X : ℕ => ((V1 X : ℝ) / (V X : ℝ))) Filter.atTop ≤
+      (2 : ℝ) / (min a₁ a₂ : ℕ) := by
+  sorry
+
+/-- Unconditional pure-kernel limiting singleton density bound:
+`liminf V₁(X) / V(X) < 1 / 10 ^ 5057`. -/
+theorem carmichael_liminf_density_lt_10_pow_neg_5057 :
+    Filter.liminf (fun X : ℕ => ((V1 X : ℝ) / (V X : ℝ))) Filter.atTop <
+      1 / (10 : ℝ) ^ 5057 := by
   sorry
 
 end CarmichaelChallenge
