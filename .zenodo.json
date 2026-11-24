@@ -1,0 +1,57 @@
+{
+  "creators": [
+    {
+      "name": "Hughes, Tyler B.",
+      "orcid": "0000-0001-6221-9014"
+    }
+  ],
+  "title": "Carmichael's Totient Conjecture: Kernel-Verified 10^10,117 Lower Bound, 10^-5,057 Density Bound, Structural Theory, and Ford's k = 10 Descent",
+  "description": "Unconditional Lean 4 + Mathlib formalization of Carmichael's totient conjecture lower-bound and density-transfer theory (zero sorry, zero native_decide, standard axioms only): proves 10^10,117 < x unconditionally for every Carmichael counterexample x (10^10,240 < x in Case I and 10^10,117 < x in Case II via 161 kernel-checked Lucas primality ladders, surpassing Masai and Valette's 1982 bound of 10^10,000), the unconditional pure-kernel limiting singleton density bound liminf V1(X)/V(X) < 10^-5,057, totient-value and density transfer via Ford's (1998) Lemmas 7.4-7.5 and Chebyshev's prime lower bound, Ford's Lemma 7.2 prime-square forcing rule, Klee's (1947) minimal-counterexample structure, Pomerance's (1974) sufficient condition, Ford's reduction to k = 6, and the unconditional bound m >= 32,000 for Ford's k = 10 divisible-preimage problem, plus non-vacuity witnesses. Scope note: the larger 10^100,000,160,994 Carmichael bound, 10^-50,000,080,497 density bound, and m >= 10^60 k = 10 bound in the companion manuscript (https://mathdiscoveries.org/results/carmichael-totient) rely on external exact-integer certificates whose soundness and transfer theorems are proved in this library. Generated and checked by AI research agents built and directed by Tyler B. Hughes. No human mathematician has yet refereed the proof.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "apache-2.0",
+  "language": "eng",
+  "keywords": [
+    "Lean 4",
+    "formalized mathematics",
+    "theorem proving",
+    "number theory",
+    "math.NT",
+    "MSC 2020: 11A25",
+    "MSC 2020: 11N64",
+    "MSC 2020: 11Y11"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://mathdiscoveries.org/results/carmichael-totient",
+      "relation": "isSupplementTo",
+      "resource_type": "other"
+    },
+    {
+      "identifier": "https://doi.org/10.1090/S0002-9904-1922-03504-5",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://doi.org/10.1090/S0002-9904-1947-08940-0",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://doi.org/10.1090/S0002-9939-1974-0347717-1",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://doi.org/10.1016/0022-314X(82)90018-6",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://doi.org/10.1023/A:1009761909132",
+      "relation": "references",
+      "resource_type": "publication-article"
+    }
+  ],
+  "notes": "Unrefereed. Generated and checked by AI research agents built and directed by Tyler B. Hughes."
+}
