@@ -1,5 +1,7 @@
 # Carmichael's Totient Conjecture: Kernel-Verified `10^10,117 < x`, Structural Theory, and Ford's `k = 10` Lower Bound
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24490744.svg)](https://doi.org/10.5281/zenodo.24490744)
+
 Unconditional Lean 4 (`v4.35.0`) + Mathlib formalization proving:
 
 - **`10^10,117 < x`** unconditionally for every counterexample `x` to Carmichael's totient conjecture (`10^10,240 < x` in Case I, `10^10,117 < x` in Case II) via 161 kernel-checked Lucas primality ladders (surpassing Masai and Valette's 1982 bound `10^10,000` purely inside the Lean 4 kernel).
