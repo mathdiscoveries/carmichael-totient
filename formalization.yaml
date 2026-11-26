@@ -51,7 +51,7 @@ sources:
   - title: "On Carmichael's conjecture"
     authors:
       - "Carl Pomerance"
-    id: "https://doi.org/10.1090/S0002-9939-1974-0347717-1"
+    id: "https://doi.org/10.1090/S0002-9939-1974-0340161-0"
     type: paper
     location: "Proc. Amer. Math. Soc. 43 (1974), 297-298"
     relationship: formalizes
@@ -60,9 +60,9 @@ sources:
     authors:
       - "Pierre Masai"
       - "Alain Valette"
-    id: "https://doi.org/10.1016/0022-314X(82)90018-6"
+    id: "https://zbmath.org/0484.10004"
     type: paper
-    location: "J. Number Theory 15 (1982), 344-347"
+    location: "Boll. Unione Mat. Ital., VI. Ser., A 1 (1982), 313-316 (Zbl 0484.10004)"
     relationship: formalizes
     note: "Establishes x > 10^10,000; this formalization proves x > 10^10,117 purely inside the Lean 4 kernel."
   - title: "The distribution of totients"
